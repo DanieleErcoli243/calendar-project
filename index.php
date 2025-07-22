@@ -49,5 +49,13 @@
         <button type="submit">Salva<i class="fa-solid fa-floppy-disk"></i></button>
 
       </form>
+
+      <!-- modulo per la cancellazione -->
+       <form action="" method="POST" onsubmit="return confirm('Are you sure you want to delete this appointement?')">
+       <input type="hidden" name="action" value="delete">
+       <input type="hidden" name="event_id" id="delete-event-id">
+       <button type="submit" class="submit-btn"><i class="fa-solid fa-trash-can"></i> Delete</button>
+
+       </form>
 </body>
 </html>
