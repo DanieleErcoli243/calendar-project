@@ -9,9 +9,13 @@
 </head>
 <body>
     <header>
-        <h1><i class="fa-solid fa-calendar-days"></i>Course Calendar <br> My Calendar Project
-
-        </h1>
+        <h1><i class="fa-solid fa-calendar-days"></i>Course Calendar <br> My Calendar Project</h1>
     </header>
+    <!-- orologio -->
+    <div class="clock-container">
+        <div id="clock">
+
+        </div>
+    </div>
 </body>
 </html>
