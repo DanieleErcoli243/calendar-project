@@ -20,7 +20,9 @@
     <!-- sezione del calendario -->
     <div class="calendar">
         <div class="nav-btn-container">
-            <div class="nav-btn"><i class="fa-solid fa-arrow-left"></i></div>
+            <button class="nav-btn"><i class="fa-solid fa-arrow-left"></i></button>
+            <h2 id="month-year"></h2>
+            <button class="nav-btn"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
     </div>
 </body>
