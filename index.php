@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar Project</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css' integrity='sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==' crossorigin='anonymous'/>
-    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
     <header>
-        <h1><i class="fa-solid fa-calendar-days"></i>Course Calendar <br> My Calendar Project</h1>
+        <h1><i class="fa-solid fa-calendar-days"></i> Course Calendar <br> My Calendar Project</h1>
     </header>
     <!-- orologio -->
     <div class="clock-container">
@@ -28,36 +28,42 @@
     </div>
 
     <!-- modale per aggiungere/modificare/cancellare un appuntamento -->
-     <div id="event-selector-wrapper">
-        <label for="event-selector"><strong>Select Event</strong></label>
-        <select name="" id="event-selector">
-            <option value="" disabled selected>Choose event...</option>
-        </select>
+     <div class="modal" id="event-modal">
+        <div class="modal-content">
+
+            <div id="event-selector-wrapper">
+               <label for="event-selector"><strong>Select Event</strong></label>
+               <select name="" id="event-selector">
+                   <option value="" disabled selected>Choose event...</option>
+               </select>
+            </div>
+            <!-- modulo principale -->
+             <form action="" method="POST" id="event-form">
+               <input type="hidden" name="action" value="add" id="form-action">
+               <input type="hidden" name="event-id" id="event-id">
+               <label for="course-name">Titolo del corso:</label>
+               <input type="text" name="course_name" id="course-name" required>
+               <label for="instructor-name">Nome dell'istruttore:</label>
+               <input type="text" name="instructor_name" id="instructor-name" required>
+               <label for="start-date">Data d'inizio:</label>
+               <input type="date" name="start_date" id="start-date" required>
+               <label for="end-date">Data di fine:</label>
+               <input type="date" name="end_date" id="end-date" required>
+               <button type="submit">Salva<i class="fa-solid fa-floppy-disk"></i></button>
+       
+             </form>
+       
+             <!-- modulo per la cancellazione -->
+              <form action="" method="POST" onsubmit="return confirm('Are you sure you want to delete this appointement?')">
+              <input type="hidden" name="action" value="delete">
+              <input type="hidden" name="event_id" id="delete-event-id">
+              <button type="submit" class="submit-btn"><i class="fa-solid fa-trash-can"></i> Elimina</button>
+       
+              </form>
+              <!-- cancellare -->
+               <button type="button" class="submit-btn">Cancella</button>
+        </div>
      </div>
-     <!-- modulo principale -->
-      <form action="" method="POST" id="event-form">
-        <input type="hidden" name="action" value="add" id="form-action">
-        <input type="hidden" name="event-id" id="event-id">
-        <label for="course-name">Titolo del corso:</label>
-        <input type="text" name="course_name" id="course-name" required>
-        <label for="instructor-name">Nome dell'istruttore:</label>
-        <input type="text" name="instructor_name" id="instructor-name" required>
-        <label for="start-date">Data d'inizio:</label>
-        <input type="date" name="start_date" id="start-date" required>
-        <label for="end-date">Data di fine:</label>
-        <input type="date" name="end_date" id="end-date" required>
-        <button type="submit">Salva<i class="fa-solid fa-floppy-disk"></i></button>
-
-      </form>
-
-      <!-- modulo per la cancellazione -->
-       <form action="" method="POST" onsubmit="return confirm('Are you sure you want to delete this appointement?')">
-       <input type="hidden" name="action" value="delete">
-       <input type="hidden" name="event_id" id="delete-event-id">
-       <button type="submit" class="submit-btn"><i class="fa-solid fa-trash-can"></i> Elimina</button>
-
-       </form>
-       <!-- cancellare -->
-        <button type="button" class="submit-btn">Cancella</button>
+        <script src="js/script.js"></script>
 </body>
 </html>
