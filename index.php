@@ -24,6 +24,7 @@
             <h2 id="month-year"></h2>
             <button class="nav-btn"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
+        <div class="calendar-grid" id="calendar"></div>
     </div>
 </body>
 </html>
