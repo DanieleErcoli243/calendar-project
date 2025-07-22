@@ -38,13 +38,13 @@
       <form action="" method="POST" id="event-form">
         <input type="hidden" name="action" value="add" id="form-action">
         <input type="hidden" name="event-id" id="event-id">
-        <label for="course-name">Course Title:</label>
+        <label for="course-name">Titolo del corso:</label>
         <input type="text" name="course_name" id="course-name" required>
-        <label for="instructor-name">Instructor Name:</label>
+        <label for="instructor-name">Nome dell'istruttore:</label>
         <input type="text" name="instructor_name" id="instructor-name" required>
-        <label for="start-date">Start Date:</label>
+        <label for="start-date">Data d'inizio:</label>
         <input type="date" name="start_date" id="start-date" required>
-        <label for="end-date">End Date:</label>
+        <label for="end-date">Data di fine:</label>
         <input type="date" name="end_date" id="end-date" required>
         <button type="submit">Salva<i class="fa-solid fa-floppy-disk"></i></button>
 
@@ -54,8 +54,10 @@
        <form action="" method="POST" onsubmit="return confirm('Are you sure you want to delete this appointement?')">
        <input type="hidden" name="action" value="delete">
        <input type="hidden" name="event_id" id="delete-event-id">
-       <button type="submit" class="submit-btn"><i class="fa-solid fa-trash-can"></i> Delete</button>
+       <button type="submit" class="submit-btn"><i class="fa-solid fa-trash-can"></i> Elimina</button>
 
        </form>
+       <!-- cancellare -->
+        <button type="button" class="submit-btn">Cancella</button>
 </body>
 </html>
