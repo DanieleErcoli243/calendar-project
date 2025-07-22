@@ -26,5 +26,13 @@
         </div>
         <div class="calendar-grid" id="calendar"></div>
     </div>
+
+    <!-- modale per aggiungere/modificare/cancellare un appuntamento -->
+     <div id="event-selector-wrapper">
+        <label for="event-selector"><strong>Select Event</strong></label>
+        <select name="" id="event-selector">
+            <option value="" disabled selected>Choose event...</option>
+        </select>
+     </div>
 </body>
 </html>
