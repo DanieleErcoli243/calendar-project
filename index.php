@@ -34,5 +34,20 @@
             <option value="" disabled selected>Choose event...</option>
         </select>
      </div>
+     <!-- modulo principale -->
+      <form action="" method="POST" id="event-form">
+        <input type="hidden" name="action" value="add" id="form-action">
+        <input type="hidden" name="event-id" id="event-id">
+        <label for="course-name">Course Title:</label>
+        <input type="text" name="course_name" id="course-name" required>
+        <label for="instructor-name">Instructor Name:</label>
+        <input type="text" name="instructor_name" id="instructor-name" required>
+        <label for="start-date">Start Date:</label>
+        <input type="date" name="start_date" id="start-date" required>
+        <label for="end-date">End Date:</label>
+        <input type="date" name="end_date" id="end-date" required>
+        <button type="submit">Salva<i class="fa-solid fa-floppy-disk"></i></button>
+
+      </form>
 </body>
 </html>
