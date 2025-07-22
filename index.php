@@ -17,5 +17,11 @@
 
         </div>
     </div>
+    <!-- sezione del calendario -->
+    <div class="calendar">
+        <div class="nav-btn-container">
+            <div class="nav-btn"><i class="fa-solid fa-arrow-left"></i></div>
+        </div>
+    </div>
 </body>
 </html>
