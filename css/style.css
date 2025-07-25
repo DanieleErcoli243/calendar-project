@@ -169,6 +169,14 @@ header {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+.modal-content label {
+    display: block;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 6px;
+    
+}
+
 
 
 
