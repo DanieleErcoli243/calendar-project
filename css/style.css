@@ -66,6 +66,13 @@ header {
     margin-bottom: 1rem;
 }
 
+.nav-btn {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-dark);
+}
 
 /* media queries */
 
