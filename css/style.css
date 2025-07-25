@@ -195,6 +195,21 @@ header {
     cursor: pointer;
 }
 
+.modal-content button[type="submit"] {
+    background-color: var(--primary);
+    color: white;
+}
+
+.submit-btn {
+    background-color: crimson;
+    color: white;
+}
+
+.modal-content button:last-child {
+    background-color: #e5e7eb;
+    color: #333;
+}
+
 /* media queries */
 
 @media screen and (max-width: 768px) {
