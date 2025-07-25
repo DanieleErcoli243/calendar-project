@@ -26,3 +26,10 @@ body {
     color: #333;
     line-height: 1.6;
 }
+
+header {
+    background-color: var(--primary);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
