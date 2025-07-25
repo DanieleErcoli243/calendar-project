@@ -210,6 +210,17 @@ header {
     color: #333;
 }
 
+/* dropdown per eventi multipli */
+
+#event-selector {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
 /* media queries */
 
 @media screen and (max-width: 768px) {
