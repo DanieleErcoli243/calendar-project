@@ -59,6 +59,14 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1 );
 }
 
+.nav-btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+
 /* media queries */
 
 @media screen and (max-width: 768px) {
