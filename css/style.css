@@ -221,6 +221,35 @@ header {
     border: 1px solid #ccc;
 }
 
+/* logica dei bottoni in overlay */
+
+.day-overlay {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 2;
+}
+
+.day:hover .day-overlay {
+    display: flex;
+}
+
+.overlay-btn {
+    background-color: var(--primary-dark);
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+
+
 /* media queries */
 
 @media screen and (max-width: 768px) {
