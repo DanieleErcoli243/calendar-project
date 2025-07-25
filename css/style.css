@@ -17,3 +17,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* generici */
+
+body {
+    font-family: "Inter", sans-serif;
+}
