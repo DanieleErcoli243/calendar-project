@@ -110,7 +110,17 @@ header {
 .date-number {
     font-weight: bold;
     margin-bottom: 5px;
-    
+}
+
+.event {
+    background-color: var(--primary);
+    color: white;
+    padding: 3px 6px;
+    border-radius: 4px;
+    margin-top: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 2s ease;
 }
 
 /* media queries */
