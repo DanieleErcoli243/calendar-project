@@ -248,7 +248,9 @@ header {
     transition: background 0.2s ease;
 }
 
-
+.overlay-btn:hover {
+    background: var(--primary);
+}
 
 /* media queries */
 
