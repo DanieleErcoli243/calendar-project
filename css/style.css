@@ -46,3 +46,13 @@ header {
     letter-spacing: 2px;
     border-bottom: 2px solid var(--primary);
 }
+
+/* media queries */
+
+@media screen and (max-width: 768px) {
+    .clock-container {
+        font-size: 1.4rem;
+        padding: 0.75rem;
+    }
+    
+}
