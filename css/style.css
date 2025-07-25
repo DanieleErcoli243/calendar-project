@@ -138,6 +138,15 @@ header {
     font-weight: bold;
 }
 
+.success {
+    background-color: var(--success);
+    color: var(--success-text);
+}
+
+.error {
+    background-color: var(--error);
+    color: var(--error-text);   
+}
 
 
 /* media queries */
