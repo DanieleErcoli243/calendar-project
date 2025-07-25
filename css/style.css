@@ -74,6 +74,12 @@ header {
     color: var(--primary-dark);
 }
 
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
 /* media queries */
 
 @media screen and (max-width: 768px) {
@@ -83,3 +89,21 @@ header {
     }
     
 }
+
+@media screen and (max-width: 1024px) {
+    .calendar-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 10px;
+    }
+    
+    .day, .day-name {
+        min-width: 140px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+
+    }
+}
+
