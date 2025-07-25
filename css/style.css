@@ -1,3 +1,4 @@
+/* root properties */
 :root {
     --primary: #6b82f6;
     --primary-light: #dbeafe;
@@ -7,4 +8,12 @@
     --success-text: #065f46;
     --error: #fee2e2;
     --error-text: #b91c1c;
+}
+
+/* css reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
