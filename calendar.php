@@ -37,3 +37,5 @@ if ($_SERVER("REQUEST_METHOD") === "POST" && ($_POST['action'] ?? '') === "add")
     header("Location: " . $_SERVER["PHP_SELF"] . "?error=1");
     exit;
 }
+
+// gestire la modifica di un appuntamento 1:40:07
