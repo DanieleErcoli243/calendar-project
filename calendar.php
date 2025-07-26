@@ -96,3 +96,30 @@ if(isset($_GET["success"])) {
 if (isset($_GET["error"])) {
     $error_msg = 'Error occurred. Please, check your input';
 }
+
+// raccogliere tuttli gli appuntamenti e distribuirli
+
+$result = $conn->query("SELECT * aapointments");
+
+if ($result && $result->num_rows > 0) {
+    while ($row = $result->festch_assoc()) {
+        $start = new DateTime($row["start_date"]);
+        $end = new DateTime($row["end_date"]);
+
+        while($start < $end) {
+            $events_from_db[] = [
+                "id" => $row['id'],
+                "title" => "{$row['course_name} - {$row['instructor_name]}",
+                "date" => $start=>format('d, m, Y'),
+                "start" => $row['start_date'],
+                "end" => $row['end_date']
+            ];
+
+            $start->modify('+1 day');
+        }
+    }
+}
+
+$conn->close()
+
+?>
