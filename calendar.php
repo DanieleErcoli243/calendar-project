@@ -20,7 +20,7 @@ if ($_SERVER("REQUEST_METHOD") === "POST" && ($_POST['action'] ?? '') === "add")
     
     // scrivo una stringa sql
 
-    if ($course && $instructor && $instructor && $end) {
+    if ($course && $instructor && $instructor && $start && $end) {
         $stmt = $conn->prepare(
             "INSERT INTO appointments (course_name, instructor_name, start_date, end_date) VALUES (?, ?, ?, ?)"
         ); 
@@ -38,4 +38,27 @@ if ($_SERVER("REQUEST_METHOD") === "POST" && ($_POST['action'] ?? '') === "add")
     exit;
 }
 
-// gestire la modifica di un appuntamento 1:40:07
+// gestire la modifica di un appuntamento
+
+if($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST["action"]) === 'edit') {
+    $id = $POST["event_id"] ?? null;
+    $course = trim($_POST["course_name"] ?? "");
+    $instructor = trim($_POST["instructor_name"] ?? "");
+    $start = $_POST["start_date"] ?? "";
+    $end = $_POST["end_date"] ?? "";
+
+    if ($course && $instructor && $instructor && $start && $end) {
+        $stmt = $conn->prepare(
+            "UPDATE appointments SET course_name = ?, instructor_name = ?, start_date = ?, end_date = ? WHERE id = ?"
+        ); 
+
+        $stmt = bind_param("ssssi", $course, $instructor, $start, $end, $id);
+        $stmt->execute();
+        $stmt->close();
+          header("Location: " . $_SERVER["PHP_SELF"] . "?success=2");
+    exit;
+    } else {
+    header("Location: " . $_SERVER["PHP_SELF"] . "?error=2");
+    exit;
+}
+}
