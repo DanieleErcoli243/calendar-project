@@ -252,6 +252,17 @@ const navigateMonth = offset => {
     renderCalendar(currentDate);
 }
 
+// creo la funzione per l'orologio
+
+const updateClock = () => {
+    const now = new Date();
+    clock.textContent = [
+        now.getHours().toString().padStart(2, '0'),
+        now.getMinutes().toString().padStart(2, '0'),
+        now.getSeconds().toString().padStart(2, '0'),
+    ].join(':');
+}
+
 
 
 
@@ -260,7 +271,7 @@ const navigateMonth = offset => {
 const calendarElmnt = document.getElementById('calendar');
 const monthYearElmnt = document.getElementById('month-year');
 const modalElmnt = document.getElementById('event-modal');
-
+const clock = document.getElementById('clock');
 // istanzio una variabile per la data odierna
 
 let currentDate = new Date();
