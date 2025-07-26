@@ -239,6 +239,13 @@ const handleEventSelection = eventJSON => {
     document.getElementById('end-time').value = event.end_time || "";
 }
 
+// creo la funzione per chiudere la modale
+
+const closeModal = () => {
+    modalElmnt.style.display = 'none';
+}
+
+
 
 // seleziono gli elementi dal DOM
 const calendarElmnt = document.getElementById('calendar');
