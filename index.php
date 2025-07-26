@@ -1,3 +1,10 @@
+<?php
+
+include "calendar.php";
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -71,6 +78,10 @@
                <button type="button" class="submit-btn">Cancella</button>
         </div>
      </div>
-        <script src="js/script.js"></script>
+
+    <script>
+        const events = <?= json_encode($events_from_db, JSON_UNESCAPED_UNICODE); ?>
+    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
