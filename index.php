@@ -52,6 +52,10 @@
                <input type="date" name="start_date" id="start-date" required>
                <label for="end-date">Data di fine:</label>
                <input type="date" name="end_date" id="end-date" required>
+               <label for="start-time">Ora d'inizio:</label>
+               <input type="time" name="start_time" id="start-time" required>
+               <label for="end-time">Ora di fine:</label>
+               <input type="time" name="end_time" id="end-time" required>
                <button type="submit">Salva<i class="fa-solid fa-floppy-disk"></i></button>
        
              </form>

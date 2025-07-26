@@ -110,7 +110,7 @@ if ($result && $result->num_rows > 0) {
             $events_from_db[] = [
                 "id" => $row['id'],
                 "title" => "{$row['course_name} - {$row['instructor_name]}",
-                "date" => $start=>format('d, m, Y'),
+                "date" => $start->format('d, m, Y'),
                 "start" => $row['start_date'],
                 "end" => $row['end_date']
             ];
