@@ -149,9 +149,35 @@ const renderCalendar = (date = new Date()) => {
         cell.appendChild(overlay);
         cell.appendChild(eventBox);
         calendarElmnt.appendChild(cell)
-
-        
     }
+}
+
+// creo una funzione che apre la modale per l'aggiunta
+
+const openModalToAdd = dateStr => {
+    // recupero l'elemento del modulo e ne cambio il valore
+    document.getElementById('form-action').value= "Add";
+    document.getElementById('event-id').value= "";
+    document.getElementById('delete-event-id').value= "";
+    document.getElementById('course-name').value= "";
+    document.getElementById('instructor-name').value= "";
+    document.getElementById('start-date').value= "dateStr";
+    document.getElementById('end-date').value= "dateStr";
+    document.getElementById('start-time').value= "09:00";
+    document.getElementById('end-time').value= "10:00";
+
+    // recupero il selettore di eventi e il suo contenitore
+    const selector = document.getElementById('event-selector');
+    const wrapper = document.getElementById('event-selector-wrapper');
+
+    // stabilisco la condizione per cambiare il display del contenitore
+    if(selector && wrapper) {
+        selector.innerHTML = '';
+        wrapper.style.display = 'none';
+    }
+    
+    // cambio il display alla modale per mostrarla
+    modalElmnt.style.display = 'flex';
 }
 
 // seleziono gli elementi dal DOM
