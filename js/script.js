@@ -121,11 +121,34 @@ const renderCalendar = (date = new Date()) => {
             // impedisco il funzionamento naturale
             e.preventDefault();
             // invoco la funzione che mi serve
-            openModalForAdd(dateStr);
+            openModalToAdd(dateStr);
         };
 
         // appendo i bottoni all'overlay
         overlay.appendChild(addBtn);
+
+        if(eventToday.length > 0) {
+            const editBtn = document.createElement("button");
+        // aggiungo una classe ai bottoni
+        editBtn.className = 'overlay-btn';
+        // gli cambio il testo
+        editBtn.textContent = 'Edit';
+        // stabilisco cosa fargli fare al click
+        editBtn.onclick = e => {
+            // impedisco il funzionamento naturale
+            e.preventDefault();
+            // invoco la funzione che mi serve
+            openModalToEdit(eventToday);
+        };
+
+        // appendo il bottone all'overlay
+        overlay.appendChild(editBtn);
+        }
+
+        // appendo gli elementi alle celle e le celle al calendario
+        cell.appendChild(overlay);
+        cell.appendChild(eventBox);
+        calendarElmnt.appendChild(cell)
 
         
     }
