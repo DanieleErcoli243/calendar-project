@@ -64,7 +64,48 @@ const renderCalendar = (date = new Date()) => {
 
         // faccio un ciclo per filtrare sugli eventi
         const eventToday = events.filter(e => e.date === dateStr);
-        // creo un contenitore per l'evento 2:11
+        // creo un contenitore per l'evento
+        const eventBox = document.createElement("div");
+        // gli do una classe
+        eventBox.className = "events";
+
+        // rendere gli eventi
+        events.forEach(event => {
+            // creo un elemento per l'evento
+            const e = document.createElement("div");
+            // gli do una classe
+            e.className = "event";
+
+            // creo un elemento per il corso
+            const courseElmnt = document.createElement("div");
+            // gli do una classe
+            courseElmnt.className = "course";
+            // aggiungo un contenuto testuale
+            courseElmnt.textContent = event.title.split(" - ")[0];
+            
+            // creo un elemento per l'insegnante
+            const instructorElmnt = document.createElement("div");
+            // gli do una classe
+            instructorElmnt.className = "instructor";
+            // aggiungo un contenuto testuale
+            instructorElmnt.textContent = event.title.split(" - ")[1];
+           
+            // creo un elemento per il tempo
+            const timeElmnt = document.createElement("div");
+            // gli do una classe
+            timeElmnt.className = "time";
+            // aggiungo un contenuto testuale
+            timeElmnt.textContent = event.start.time + " - " + event.end_time();
+
+            // appendo gli elementi creati all'elemento evento
+            e.appendChild(courseElmnt);
+            e.appendChild(instructorElmnt);
+            e.appendChild(timeElmnt);
+
+            // appendo l'elemento evento al contenitore
+            eventBox.appendChild(e);
+        });
+
     }
 }
 
