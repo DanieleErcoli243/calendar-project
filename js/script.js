@@ -106,6 +106,28 @@ const renderCalendar = (date = new Date()) => {
             eventBox.appendChild(e);
         });
 
+        // overlay dei bottoni
+        const overlay = document.createElement("div");
+        overlay.className = 'overlay';
+
+        // creo i bottoni
+        const addBtn = document.createElement("button");
+        // aggiungo una classe ai bottoni
+        addBtn.className = 'overlay-btn';
+        // gli cambio il testo
+        addBtn.textContent = 'Add';
+        // stabilisco cosa fargli fare al click
+        addBtn.onclick = e => {
+            // impedisco il funzionamento naturale
+            e.preventDefault();
+            // invoco la funzione che mi serve
+            openModalForAdd(dateStr);
+        };
+
+        // appendo i bottoni all'overlay
+        overlay.appendChild(addBtn);
+
+        
     }
 }
 
