@@ -29,7 +29,40 @@ const renderCalendar = (date = new Date()) => {
         dayElmnt.textContent = day;
         // lo appendo
         calendarElmnt.appendChild(dayElmnt);
-    })
+    });
+
+
+    // ciclo for per creare dinamicamente altri div
+    for(let i = 0; i < firstDayOfMonth; i++) {
+        calendarElmnt.appendChild(document.createElement("div"));
+    }
+
+    // faccio un ciclo sui giorni
+
+    for(let day = 1; day < totalDays; day++) {
+        // creo una stringa con la data
+        const dateStr = `${string(day).padStart(2, '0')}-${string(month+1).padStart(2, '0')}-${straing(year)}`;
+        // istanzio una variabile per la cella
+        const cell = document.createElement("div");
+        // le attribuisco una classe
+        cell.className = "day";
+
+        //stabilisco le condizioni per attribuire una classe alla cella
+        if (day === totalDays.getDate() && month === totalDays.getMonth() && totalDays.getFullYear()) {
+            cell.classList.add('today');
+        }
+        
+        // istanzio un'altra variabile per creare dei div
+        const dateElmnt = document.createElement('div');
+
+        // attribuisco loro una classe
+        dateElmnt.className = 'date-number';
+        // li riempio col contenuto
+        dateElmnt.textContent = day;
+        // li appendo alle celle
+        cell.appendChild(dateElmnt);
+
+    }
 }
 
 // seleziono gli elementi dal DOM
