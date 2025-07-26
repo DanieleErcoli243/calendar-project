@@ -81,3 +81,18 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST["action"]) === 'delete') {
     } 
 }
 
+
+// messaggi di successo e di errore
+
+if(isset($_GET["success"])) {
+    $success_msg = match($_GET["success"]) {
+        "1" => "Appointment added successfully",
+        "2" => "Appointment updated successfully",
+        "3" => "Appointment deleted successfully",
+        default => ''
+    };
+}
+
+if (isset($_GET["error"])) {
+    $error_msg = 'Error occurred. Please, check your input';
+}
