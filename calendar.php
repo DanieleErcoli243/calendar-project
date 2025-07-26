@@ -62,3 +62,22 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST["action"]) === 'edit') {
     exit;
 }
 }
+
+// gestire la cancellazione dell'appuntamento
+
+if($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST["action"]) === 'delete') {
+    $id = $POST["event_id"] ?? null;
+   
+    if ($id) {
+        $stmt = $conn->prepare(
+            "DELETE FROM appointments WHERE id = ?"
+        ); 
+
+        $stmt = bind_param("i", $id);
+        $stmt->execute();
+        $stmt->close();
+          header("Location: " . $_SERVER["PHP_SELF"] . "?success=3");
+    exit;
+    } 
+}
+
