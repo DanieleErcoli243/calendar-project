@@ -212,10 +212,31 @@ const openModalToEdit = eventsOnDate => {
 
     }
 
-    // invoco la funzione per gestire gli eventi
+    // invoco la funzione per gestire l'evento della selezione
 
     handleEventSelection(JSON.stringify(eventsOnDate[0]));
 
+}
+
+// scrivo la funzione per gestire gli eventi
+
+const handleEventSelection = eventJSON => {
+    // istanzio la variabile evento
+    const event = JSON.parse(eventJSON);
+
+    // assegno un valore agli identificativi degli eventi
+    document.getElementById('event-id').value= event.id;
+    document.getElementById('delete-event-id').value= event.id;
+
+    // destrutturo il corso e l'insegnante
+    const [course, instructor] = event.title.split(' - ').map(e => e.trim());
+    // cambio il valore delle altre voci
+    document.getElementById('course-name').value = course || "";
+    document.getElementById('instructor-name').value = instructor || "";
+    document.getElementById('start-date').value = event.start || "";
+    document.getElementById('end-date').value = event.end || "";
+    document.getElementById('start-time').value = event.start_time || "";
+    document.getElementById('end-time').value = event.end_time || "";
 }
 
 
