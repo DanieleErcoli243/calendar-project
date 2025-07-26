@@ -62,6 +62,9 @@ const renderCalendar = (date = new Date()) => {
         // li appendo alle celle
         cell.appendChild(dateElmnt);
 
+        // faccio un ciclo per filtrare sugli eventi
+        const eventToday = events.filter(e => e.date === dateStr);
+        // creo un contenitore per l'evento 2:11
     }
 }
 
