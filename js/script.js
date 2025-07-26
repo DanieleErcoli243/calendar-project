@@ -180,6 +180,45 @@ const openModalToAdd = dateStr => {
     modalElmnt.style.display = 'flex';
 }
 
+// creo una funzione che apre la modale per la modifica
+const openModalToEdit = eventsOnDate => {
+    document.getElementById('form-action').value= "edit";
+    // cambio il display alla modale per mostrarla
+    modalElmnt.style.display = 'flex';
+    // recupero il selettore di eventi e il suo contenitore
+    const selector = document.getElementById('event-selector');
+    const wrapper = document.getElementById('event-selector-wrapper');
+    // cambio il testo nel selettore
+    selector.innerHTML = "<option disabled selected>Choose event...</option>";
+
+    // faccio un ciclo sugli eventi
+    eventsOnDate.forEach(e => {
+        // creo un elemento option
+        const option = document.createElement('option');
+        // gli assegno un valore
+        option.value = JSON.stringify(e);
+        // e ne cambio il testo
+        option.textContent = `${e.title} (${e.start} -> ${e.end})`;
+        // appendo l'option al selettore
+        selector.appendChild(option);
+
+    });
+
+    // stabilisco le condizioni per mostrare o meno il contenitore del selettore
+    if(eventsOnDate.length > 1) {
+        wrapper.style.display = 'block';
+    } else {
+        wrapper.style.display = 'none';
+
+    }
+
+    // invoco la funzione per gestire gli eventi
+
+    handleEventSelection(JSON.stringify(eventsOnDate[0]));
+
+}
+
+
 // seleziono gli elementi dal DOM
 const calendarElmnt = document.getElementById('calendar');
 const monthYearElmnt = document.getElementById('month-year');
