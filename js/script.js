@@ -245,6 +245,15 @@ const closeModal = () => {
     modalElmnt.style.display = 'none';
 }
 
+// creo la funzione per navigare tra i mesi
+
+const navigateMonth = offset => {
+    currentDate.setMonth(currentDate.getMonth() + offset);
+    renderCalendar(currentDate);
+}
+
+
+
 
 
 // seleziono gli elementi dal DOM
