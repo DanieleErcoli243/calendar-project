@@ -275,3 +275,10 @@ const clock = document.getElementById('clock');
 // istanzio una variabile per la data odierna
 
 let currentDate = new Date();
+
+
+// invoco le funzioni per far funzionare tutto
+
+renderCalendar(currentDate);
+updateClock();
+setInterval(updateClock, 1000);
